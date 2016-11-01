@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="300" height="7" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="meta_tiles" tilewidth="64" tileheight="64" spacing="1" margin="1">
+  <image source="meta_tiles.png" width="280" height="70"/>
+  <tile id="0">
+   <properties>
+    <property name="obstacle_tile" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="destination_tile" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="5" name="obstacle_tile" tilewidth="64" tileheight="64" spacing="1" margin="1">
+  <image source="obstacle_tile.png" width="66" height="66"/>
+ </tileset>
+ <layer name="obstacle" width="300" height="7">
+  <data encoding="base64" compression="zlib">
+   eJzllt0OgzAIhXfj+7/ybo0pnD+q2SQx2Sw90Ba++vnUdpyebuwg3iPNyp8xNM/VnbRkfalGdx7pHMVHzZ2pL6X2rn5VrDsex1QdpW8r/Wqf1Xisf/ce2Zt4tZt5b+VV0qddfaXG9qXC4rN/9XsyZ8Zf0WBznOLPnbzq5qCYKq9Sljhn655lmgeav4vpVayEV4yGUycTxvBK0Ul8Vj2j8pP5dqiYqq79GmP1W/VndBibuhsYTXQfdHrsf5aJu/qkswnuOjG7+wP1kKq78unGmTisKXdkNd/RQHPYvWZYxdTtildIM2HOnbxC5pyXo+/y380l6QPHJu4F5xthmkFnX0cr5UeXh7q/DJscpq9YMKkzYayuypwneYX2Od1DV2eCV6xN1cgv88rhQKKFagIxoNO9zl/psrmhcVTfUzqKqZq73yuW1IQyzsT/Z15N3Y1P8Eo9F7ZHlT7txpn4zsOukV0Dyyw3z9X7dM0qx1T/lX0Bcz4Lmw==
+  </data>
+ </layer>
+ <objectgroup name="object" width="300" height="7">
+  <object name="player_point" x="57" y="188" width="77" height="75"/>
+ </objectgroup>
+ <layer name="meta" width="300" height="7">
+  <data encoding="base64" compression="zlib">
+   eJzlmO2qwzAIhtvd/0WP/RiUoL4fmo5tQqEnMa8m1SfjHEdu5+Wp5k5iHGlm/oyhda7upHX219Wovkd3jeKj5s7Ul1J7q18W647HMVVH6dtMPztnNR7rv44/lqeyf+LVbub9K686fVrVV9fYvlRYfPXP3idzZvwVDTbHDn/U8SleVWuqXK66aGzVRDHd+cjH/ZbdPND6XUzPYnV4xWg4dTJhDK8UnY5P1DMqP5nfDhlT1b2vMaJ31T97V3j1XjtVI0gT3QeVHvs3y8RdfVLZBHedmNX9gXpI1Y18qnkmDmvKHZmtdzTQGvasGVYxdRvxCml2mHMnr5A538vRd/nv5tLpA8cm7gXnN8I0g66+jlaXH1Ue6vkybHKYHrFgUmfCWF2GOar/Ll6hc+6eoaszwSvWpmrkm3nlcKCjhWoCMaDSXddHumxuaB7V95SOYqrm7vG7/9/OzDPxf5lXU3fjJ3ilfhe2R5U+reaZ+M7D7pHdA8ssN89ovLtnlWOq/8tWXj0B4LoCiw==
+  </data>
+ </layer>
+</map>
