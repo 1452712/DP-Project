@@ -9,7 +9,7 @@ Oct. 2016, in tjsse
 
 1. 将原本以场景作为类的架构进行重构, 抽出公共的动作(如地图渲染)作为基类, 去掉不必要的类 (使之成为instance; 抽出配置信息, 在初始化时进行赋值)
 
->其余部分见[/Doc/Presentation01.pptx](https://github.com/1452712/DP-Project/Doc)
+>其余部分见[/Doc/Presentation01.pdf](https://github.com/1452712/DP-Project/tree/master/Doc)
 
 ### 进度说明
 
