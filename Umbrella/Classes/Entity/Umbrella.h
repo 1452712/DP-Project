@@ -2,8 +2,8 @@
 #define __UMBRELLA_H__
 
 #include "cocos2d.h"
-#include "Controller.h"
-#include "ControllerListener.h"
+#include "..\Controller\Controller.h"
+#include "..\Controller\ControllerListener.h"
 USING_NS_CC;
 
 class Umbrella:public Node,public ControllerListener {

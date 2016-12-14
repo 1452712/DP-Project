@@ -2,12 +2,12 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
 
-#include "BeginScene.h"
-#include "SceneManager.h"
-#include "MenuScene.h"
-#include "EndScene.h"
-#include "LevelScene.h"
-#include "Level6Scene.h"
+#include ".\Scene\BeginScene.h"
+#include ".\Scene\SceneManager.h"
+#include ".\Scene\MenuScene.h"
+#include ".\Scene\EndScene.h"
+#include ".\Scene\LevelScene.h"
+#include ".\Scene\Level6Scene.h"
 USING_NS_CC;
 
 AppDelegate::AppDelegate() {

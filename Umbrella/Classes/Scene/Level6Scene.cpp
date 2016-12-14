@@ -1,7 +1,7 @@
 #include "Level6Scene.h"
 #include "LevelScene.h"
-#include "Umbrella.h"
-#include "FloatController.h"
+#include "..\Entity\Umbrella.h"
+#include "..\Controller\FloatController.h"
 #include "SceneManager.h"
 
 Scene* Level6Scene::CreateScene() {

@@ -1,8 +1,8 @@
 #include "HelloWorldScene.h"
-#include "LevelScene.h"
-#include "Umbrella.h"
+#include ".\Scene\LevelScene.h"
+#include ".\Entity\Umbrella.h"
 #include "SimpleAudioEngine.h"
-#include "SceneManager.h"
+#include ".\Scene\SceneManager.h"
 
 USING_NS_CC;
 

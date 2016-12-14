@@ -1,9 +1,9 @@
 #include "Level3Scene.h"
 #include "LevelScene.h"
-#include "Umbrella.h"
-#include "FloatController.h"
+#include "..\Entity\Umbrella.h"
+#include "..\Controller\FloatController.h"
 #include "SceneManager.h"
-#include "RainDrop.h"
+#include "..\Entity\RainDrop.h"
 //////////////////////////////
 ////LevelXScene///////////////
 ////×¢ÊÍ¼ûLevel6Scene//////////

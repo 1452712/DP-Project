@@ -2,8 +2,8 @@
 #define __LEVEL_SCENE_H__
 
 #include "cocos2d.h"
-#include "Umbrella.h"
-#include "RainDrop.h"
+#include "..\Entity\Umbrella.h"
+#include "..\Entity\RainDrop.h"
 
 USING_NS_CC;
 
