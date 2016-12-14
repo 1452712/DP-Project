@@ -8,7 +8,7 @@ USING_NS_CC;
 class SceneFactory {
 public:
     virtual Scene* createScene() = 0;
-    virtual Scene* createScene(string args) = 0;
+    //virtual Scene* createScene(string args) = 0;
 };
 
 #endif
