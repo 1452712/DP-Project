@@ -76,11 +76,11 @@ bool BeginScene::init() {
 }
 
 void BeginScene::StartButtomCallBack(cocos2d::Ref* ptr_sender) {
-	SceneManager::GetInstance()->ChangeScene(SceneManager::level_1_scene);
+	SceneManager::GetInstance()->ChangeScene(level_1_scene);
 }
 
 void BeginScene::MenuButtomCallBack(cocos2d::Ref* ptr_sender) {
-	SceneManager::GetInstance()->CoverScene(SceneManager::menu_scene);
+	SceneManager::GetInstance()->CoverScene(menu_scene);
 }
 
 

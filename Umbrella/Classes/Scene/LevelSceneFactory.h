@@ -4,12 +4,12 @@
 #include <string>
 #include "cocos2d.h"
 #include "SceneFactory.h"
+
 USING_NS_CC;
 
 class LevelSceneFactory: public SceneFactory {
 public:
-    Scene* createScene();
-    //Scene* createScene(string args);
+    Scene* createScene(enum SCENE_INDEX);
 };
 
 #endif

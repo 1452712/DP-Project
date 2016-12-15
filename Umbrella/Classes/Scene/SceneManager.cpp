@@ -10,8 +10,10 @@
 #include "Level6Scene.h"
 #include "EndScene.h"
 #include "SimpleAudioEngine.h"
+#include "LevelSceneConfig.h"
 
 SceneManager* SceneManager::m_scene_manager = nullptr;
+LevelSceneConfig config;
 
 bool SceneManager::init() {
 	return true;
@@ -58,7 +60,7 @@ void SceneManager::ChangeScene(SCENE_INDEX scene_type){
 		next_scene = Level6Scene::CreateScene();
 		break;
 	case begin_scene:
-		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("Telepopmusik - Breathe.mp3");
+		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[begin_scene].c_str());
 		next_scene = BeginScene::CreateScene();
 		break;
 	case end_scene:

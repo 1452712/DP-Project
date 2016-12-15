@@ -105,5 +105,5 @@ void Level3Scene::InitializeBackground()
 }
 
 void Level3Scene::ChangeScene(float delta) {
-	SceneManager::GetInstance()->ChangeScene(SceneManager::level_4_scene);
+	SceneManager::GetInstance()->ChangeScene(level_4_scene);
 }

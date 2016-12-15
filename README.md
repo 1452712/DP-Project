@@ -1,4 +1,4 @@
-# DP-Project
+﻿# DP-Project
 Oct. 2016, in tjsse
 
 ### 选题
@@ -16,6 +16,8 @@ Oct. 2016, in tjsse
 1. DP2中题目二的代码基本完成.
 
 2. Umbrella完成重构计划
+
+3. 完成Config - Aggregation
 
 ### 说明
 

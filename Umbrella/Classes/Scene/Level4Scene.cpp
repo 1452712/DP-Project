@@ -179,5 +179,5 @@ void Level4Scene::InitializeBackground()
 }
 
 void Level4Scene::ChangeScene(float delta) {
-	SceneManager::GetInstance()->ChangeScene(SceneManager::level_5_scene);
+	SceneManager::GetInstance()->ChangeScene(level_5_scene);
 }

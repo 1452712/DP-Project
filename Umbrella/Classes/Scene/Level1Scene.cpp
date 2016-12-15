@@ -22,7 +22,7 @@ void Level1Scene::AddUmbrella(TMXTiledMap *map) {
 
 	Sprite* umbrella_sprite = Sprite::create("Umbrella1.png");     
 	m_umbrella = Umbrella::create();
-	m_umbrella->setContentSize(Size(100,100));
+	//m_umbrella->setContentSize(Size(100,100));
 	m_umbrella->SetPurity(1000);                                  
 	m_umbrella->SetTimeLimit(303.0f);
 	m_umbrella->BindSprite(umbrella_sprite);
@@ -61,5 +61,5 @@ void Level1Scene::InitializeBackground()
 }
 
 void Level1Scene::ChangeScene(float delta) {
-	SceneManager::GetInstance()->ChangeScene(SceneManager::level_2_scene);
+	SceneManager::GetInstance()->ChangeScene(level_2_scene);
 }

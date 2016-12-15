@@ -261,5 +261,5 @@ void Level6Scene::FogUpdate(float delta) {
 }
 
 void Level6Scene::ChangeScene(float delta) {
-	SceneManager::GetInstance()->ChangeScene(SceneManager::end_scene);
+	SceneManager::GetInstance()->ChangeScene(end_scene);
 }

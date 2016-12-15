@@ -2,8 +2,12 @@
 #define __SCENE_MANAGER_H__
 
 #include "cocos2d.h"
+#include "LevelSceneConfig.h"
 USING_NS_CC;
 
+enum SCENE_INDEX {menu_scene   ,level_1_scene,level_2_scene,level_3_scene,
+		          level_4_scene,level_5_scene,level_6_scene,begin_scene  ,
+				  end_scene    ,};
 //场景控制
 class SceneManager : public Ref {
 public:
@@ -11,9 +15,6 @@ public:
 
 	static SceneManager* GetInstance();
 
-	enum SCENE_INDEX {menu_scene   ,level_1_scene,level_2_scene,level_3_scene,
-		              level_4_scene,level_5_scene,level_6_scene,begin_scene  ,
-					  end_scene    ,};
 	//切换（释放上一场景）
 	void ChangeScene(SCENE_INDEX scene_type);
 

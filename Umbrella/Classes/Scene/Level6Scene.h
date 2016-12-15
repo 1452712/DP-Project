@@ -12,7 +12,7 @@ public:
 
 	//雾的跑动
 	void FogUpdate(float delta);
-//	void FatUpdate(float delta);
+
 	//改变场景
 	virtual void ChangeScene(float delta);
 
