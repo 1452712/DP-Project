@@ -2,6 +2,11 @@
 #define __SCENE_MANAGER_H__
 
 #include "cocos2d.h"
+#include "BeginScene.h"
+#include "MenuScene.h"
+#include "LevelScene.h"
+#include "EndScene.h"
+#include "SimpleAudioEngine.h"
 #include "LevelSceneConfig.h"
 USING_NS_CC;
 

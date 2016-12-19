@@ -1,17 +1,5 @@
 #include "SceneManager.h"
-#include "BeginScene.h"
-#include "MenuScene.h"
-#include "LevelScene.h"
-#include "Level1Scene.h"
-#include "Level2Scene.h"
-#include "Level3Scene.h"
-#include "Level4Scene.h"
-#include "Level5Scene.h"
-#include "Level6Scene.h"
-#include "LevelXScene.h"
-#include "EndScene.h"
-#include "SimpleAudioEngine.h"
-#include "LevelSceneConfig.h"
+
 
 SceneManager* SceneManager::m_scene_manager = nullptr;
 LevelSceneConfig config;

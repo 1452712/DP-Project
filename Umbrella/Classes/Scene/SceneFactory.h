@@ -2,6 +2,7 @@
 #define __SCENE_FACTORY_H__
 
 #include "cocos2d.h"
+#include "LevelScene.h"
 #include "SceneManager.h"
 USING_NS_CC;
 

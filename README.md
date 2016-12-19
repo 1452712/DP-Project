@@ -19,6 +19,12 @@ Oct. 2016, in tjsse
 
 3. 完成Config - Aggregation
 
+4. LevelScene - Facotory
+
+5. Fog - Decorator
+
+6. SceneManager - Single Instance
+
 ### 说明
 
 - **原创代码在/Umbrella/Classes目录下**

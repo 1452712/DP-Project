@@ -7,7 +7,6 @@
 #include ".\Scene\MenuScene.h"
 #include ".\Scene\EndScene.h"
 #include ".\Scene\LevelScene.h"
-#include ".\Scene\Level6Scene.h"
 USING_NS_CC;
 
 AppDelegate::AppDelegate() {
