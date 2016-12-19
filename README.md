@@ -17,7 +17,7 @@ Oct. 2016, in tjsse
 
 2. Umbrella完成重构计划
 
-3. 完成Config - Aggregation
+3. 完成Config - Composition
 
 4. LevelScene - Facotory
 

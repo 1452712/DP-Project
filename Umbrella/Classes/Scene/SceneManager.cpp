@@ -46,7 +46,7 @@ void SceneManager::ChangeScene(SCENE_INDEX scene_type){
 		//break;
 	case level_6_scene:
 		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[scene_type].c_str());
-		next_scene = LevelXScene::CreateScene();
+		next_scene = LevelScene::CreateScene();
 		break;
 	case begin_scene:
 		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[scene_type].c_str());

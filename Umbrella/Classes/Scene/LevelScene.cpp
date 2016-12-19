@@ -2,6 +2,7 @@
 
 #include "LevelScene.h"
 
+//LevelSceneConfig LevelScene::config;
 LevelSceneConfig config;
 SCENE_INDEX LevelScene::m_current_scene = begin_scene;
 
@@ -10,7 +11,6 @@ Scene* LevelScene::CreateScene(){
 	auto layer = LevelScene::create();
 	scene->addChild(layer);
 
-	
 	switch(m_current_scene) {
 	case begin_scene:
 		m_current_scene = level_1_scene;

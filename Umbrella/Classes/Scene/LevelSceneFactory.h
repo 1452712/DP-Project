@@ -7,24 +7,26 @@
 #include "SceneFactory.h"
 #include "SceneManager.h"
 #include "LevelScene.h"
+#include "..\Entity\RainDrop.h"
 
 USING_NS_CC;
 
 class LevelSceneFactory: public SceneFactory {
 public:
-    LevelScene* createScene(LevelScene*, SCENE_INDEX, Vector<RainDrop*>*);
+    LevelScene* createScene(LevelScene *scene, SCENE_INDEX scene_type, Vector<RainDrop*> *rain);
 private:
-	LevelScene* AddRainDrops(LevelScene*, SCENE_INDEX,Vector<RainDrop*>*);
+	void AddRainDrops(LevelScene *scene, SCENE_INDEX scene_type,Vector<RainDrop*> *rain);
 
 	//单个场景的雨滴
-	LevelScene* AddRainDropsS2(LevelScene*, Vector<RainDrop*>*);
-	LevelScene* AddRainDropsS3(LevelScene*, Vector<RainDrop*>*);
-	LevelScene* AddRainDropsS4(LevelScene*, Vector<RainDrop*>*);
-	LevelScene* AddRainDropsS5(LevelScene*, Vector<RainDrop*>*);
-	LevelScene* AddRainDropsS6(LevelScene*, Vector<RainDrop*>*);
+	void AddRainDropsS2(LevelScene *scene, Vector<RainDrop*> *rain);
+	void AddRainDropsS3(LevelScene *scene, Vector<RainDrop*> *rain);
+	void AddRainDropsS4(LevelScene *scene, Vector<RainDrop*> *rain);
+	void AddRainDropsS5(LevelScene *scene, Vector<RainDrop*> *rain);
+	void AddRainDropsS6(LevelScene *scene, Vector<RainDrop*> *rain);
 
 	//特殊的结束场景
-	LevelScene* AddEndScene(LevelScene*);
+	void AddEndScene(LevelScene *scene);
+
 };
 
 #endif

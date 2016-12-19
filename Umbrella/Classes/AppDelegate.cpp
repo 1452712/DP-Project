@@ -62,6 +62,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
 	
 	auto scene = BeginScene::CreateScene();
+
 	//auto scene = Level6Scene::CreateScene();
 	//auto scene = EndScene::CreateScene();
 	//auto scene = MenuScene::CreateScene();

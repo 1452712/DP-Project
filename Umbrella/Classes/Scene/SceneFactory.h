@@ -4,12 +4,14 @@
 #include "cocos2d.h"
 #include "LevelScene.h"
 #include "SceneManager.h"
+#include "../Entity/RainDrop.h"
+
 USING_NS_CC;
 
 //abstract base class
 class SceneFactory {
 public:
-    virtual LevelScene* createScene(LevelScene*, SCENE_INDEX, Vector<RainDrop*>*) = 0;
+    virtual LevelScene* createScene(LevelScene *scene,enum SCENE_INDEX scene_type, Vector<RainDrop*> *rain) = 0;
 };
 
 #endif

@@ -8,7 +8,7 @@ USING_NS_CC;
 
 class DecoratorScene{
 public:
-	virtual void AddDecorator(std::string decorator, LevelScene*) = 0;
+	virtual void AddDecorator(std::string decorator, LevelScene *scene) = 0;
 };
 
 #endif

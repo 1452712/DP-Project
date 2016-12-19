@@ -1,6 +1,5 @@
 #include "MenuScene.h"
 #include "SceneManager.h"
-//#include "cocos-ext.h"
 #include "SimpleAudioEngine.h"
 
 Scene* MenuScene::CreateScene() { 
@@ -31,18 +30,7 @@ bool MenuScene::init() {
 	auto menu_1 = Menu::create(back_botton, NULL);
     menu_1->setPosition(Vec2::ZERO);
     this->addChild(menu_1, 4);
-	/*
-	//Ðèdebug
-	ControlSlider *slider = ControlSlider::create("slider_background.png","slider_progress.png","slider_thumb.png");  
-	//ÐèÏ¸µ÷
-    slider->setMinimumValue(0.0f); 
-    slider->setMaximumValue(5.0f); 
-    slider->setPosition(Vec2(origin.x + visible_size.width * 0.382,
-		                     origin.y + visible_size.height * 0.8));
-    slider->setValue(300);  
-    slider->addTargetWithActionForControlEvents(this,cccontrol_selector(MenuScene::SliderChange),Control::EventType::VALUE_CHANGED);  
-    //this->addChild(slider,6);
-	*/
+
 	auto exit_bottom = MenuItemImage::create("CloseSelected.png",
                                              "CloseNormal.png",
                                              CC_CALLBACK_1(MenuScene::ExitBottomCallBack, this));
@@ -56,14 +44,7 @@ bool MenuScene::init() {
 
 	return true;
 }
-/*
-void MenuScene::SliderChange(Ref* ptr_sender,Control::EventType control_event)  
-{  
-    ControlSlider* slider = (ControlSlider*)ptr_sender;  
-	auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
-	audio->setEffectsVolume(slider->getValue());
-} 
-*/
+
 void MenuScene::MenuBottomCallBack(cocos2d::Ref *ptr_sender) {
 	SceneManager::GetInstance()->RevertScene();
 }

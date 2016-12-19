@@ -30,30 +30,29 @@ public:
 
 	//更换场景--Dynamic
 	void ChangeScene(float delta);
-	//virtual void ChangeScene(float delta,SCENE_INDEX) = 0;
 
 	//调整雨滴位置
 	void ResetRainDropPosition(Ref *ptr_sender);
 
 	//绑定Umbrella--Dynamic
-	//virtual void AddUmbrella(TMXTiledMap* map) = 0;
 	void AddUmbrella(TMXTiledMap* map);
 	//初始化背景--Dynamic
-	//virtual void InitializeBackground() = 0;
 	void InitializeBackground();
 		
 	//雾的跑动
 	void FogUpdate(float delta);
 	//设置特殊的结束场景
-	void SetNextLayer(Sprite* );
+	void SetNextLayer(Sprite* next_layer);
 
 	CREATE_FUNC(LevelScene);
-protected:
+private:
 
 	//开启菜单Callback
 	void MenuButtomCallBack(Ref *ptr_sender);
 
-	static SCENE_INDEX m_current_scene;
+	static enum SCENE_INDEX m_current_scene;
+
+	//static LevelSceneConfig config;
 
 	Umbrella *m_umbrella;
 	Sprite *m_background_1;

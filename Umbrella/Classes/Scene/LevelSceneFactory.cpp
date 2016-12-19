@@ -22,7 +22,7 @@ LevelScene* LevelSceneFactory::createScene(LevelScene* scene, SCENE_INDEX scene_
 	return scene;
 }
 
-LevelScene* LevelSceneFactory::AddRainDrops(LevelScene* scene, SCENE_INDEX scene_type, Vector<RainDrop*>* rain) {
+void LevelSceneFactory::AddRainDrops(LevelScene* scene, SCENE_INDEX scene_type, Vector<RainDrop*>* rain) {
 	if(scene_type == level_2_scene) {
 		//≥°æ∞2”ÍµŒ
 		AddRainDropsS2(scene, rain);
@@ -44,10 +44,9 @@ LevelScene* LevelSceneFactory::AddRainDrops(LevelScene* scene, SCENE_INDEX scene
 		AddRainDropsS6(scene, rain);
 	}
 
-	return scene;
 }
 
-LevelScene* LevelSceneFactory::AddRainDropsS2(LevelScene* scene,Vector<RainDrop*>* rain){
+void LevelSceneFactory::AddRainDropsS2(LevelScene* scene,Vector<RainDrop*>* rain){
 	auto particle_system_bk = ParticleSystemQuad::create("rain_normal.plist");
 	particle_system_bk->retain();
 	ParticleBatchNode *batch = ParticleBatchNode::createWithTexture(particle_system_bk->getTexture());
@@ -56,7 +55,7 @@ LevelScene* LevelSceneFactory::AddRainDropsS2(LevelScene* scene,Vector<RainDrop*
 	particle_system_bk->release();
 }
 
-LevelScene* LevelSceneFactory::AddRainDropsS3(LevelScene* scene,Vector<RainDrop*>* rain){
+void LevelSceneFactory::AddRainDropsS3(LevelScene* scene,Vector<RainDrop*>* rain){
 	auto rain_3 = ParticleSystemQuad::create("rain_3.plist");
 	rain_3->retain();
 	ParticleBatchNode *batch_3 = ParticleBatchNode::createWithTexture(rain_3->getTexture());
@@ -100,7 +99,7 @@ LevelScene* LevelSceneFactory::AddRainDropsS3(LevelScene* scene,Vector<RainDrop*
 	rain_0->release();
 }
 
-LevelScene* LevelSceneFactory::AddRainDropsS4(LevelScene* scene,Vector<RainDrop*>* rain){
+void LevelSceneFactory::AddRainDropsS4(LevelScene* scene,Vector<RainDrop*>* rain){
 	auto rain_3 = ParticleSystemQuad::create("rain_3.plist");
 	rain_3->retain();
 	ParticleBatchNode *batch_3 = ParticleBatchNode::createWithTexture(rain_3->getTexture());
@@ -214,7 +213,7 @@ LevelScene* LevelSceneFactory::AddRainDropsS4(LevelScene* scene,Vector<RainDrop*
 	rain_40->release();
 }
 
-LevelScene* LevelSceneFactory::AddRainDropsS5(LevelScene* scene,Vector<RainDrop*>* rain){
+void LevelSceneFactory::AddRainDropsS5(LevelScene* scene,Vector<RainDrop*>* rain){
 	Size visible_size = Director::getInstance()->getVisibleSize();
 
 	auto rain_3 = ParticleSystemQuad::create("rain_3.plist");
@@ -331,7 +330,7 @@ LevelScene* LevelSceneFactory::AddRainDropsS5(LevelScene* scene,Vector<RainDrop*
 	rain_40->release();
 }
 
-LevelScene* LevelSceneFactory::AddRainDropsS6(LevelScene* scene,Vector<RainDrop*>* rain){
+void LevelSceneFactory::AddRainDropsS6(LevelScene* scene,Vector<RainDrop*>* rain){
 
 	auto rain_3 = ParticleSystemQuad::create("rain_3.plist");
 	rain_3->retain();
@@ -446,7 +445,7 @@ LevelScene* LevelSceneFactory::AddRainDropsS6(LevelScene* scene,Vector<RainDrop*
 	rain_40->release();
 }
 
-LevelScene* LevelSceneFactory::AddEndScene(LevelScene* scene){
+void LevelSceneFactory::AddEndScene(LevelScene* scene){
 
 	Size visible_size = Director::getInstance()->getVisibleSize();
 

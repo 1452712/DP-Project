@@ -9,7 +9,7 @@ USING_NS_CC;
 
 class DecoratorSceneFog: public DecoratorScene{
 public:
-	void AddDecorator(std::string decorator, LevelScene*);
+	void AddDecorator(std::string decorator, LevelScene *scene);
 	//ÎíµÄÅÜ¶¯
 	void FogUpdate(float delta);
 private:	
