@@ -22,6 +22,8 @@ public:
 	std::map<enum SCENE_INDEX, std::string> UMBRELLA_IMG;
 	std::map<enum SCENE_INDEX, int> UMBRELLA_PURITY;
 	std::map<enum SCENE_INDEX, float> TIME_LIMIT;
+
+	std::map<enum SCENE_INDEX, enum SCENE_INDEX> NEXT_SCENE;
 };
 
 #endif

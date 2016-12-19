@@ -36,35 +36,35 @@ void SceneManager::ChangeScene(SCENE_INDEX scene_type){
 	//Ô¤¼ÓÔØÒôÀÖ
 	switch(scene_type) {
 	case level_1_scene:
-		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("Blue Six - Music And Wine.mp3");
+		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[scene_type].c_str());
 		next_scene = Level1Scene::CreateScene();
 		break;
 	case level_2_scene:
-		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("Blue Six - Music And Wine.mp3");
+		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[scene_type].c_str());
 		next_scene = Level2Scene::CreateScene();
 		break;
 	case level_3_scene:
-		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("Blue Six - Music And Wine.mp3");
+		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[scene_type].c_str());
 		next_scene = Level3Scene::CreateScene();
 		break;
 	case level_4_scene:
-		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("Blue Six - Music And Wine.mp3");
+		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[scene_type].c_str());
 		next_scene = Level4Scene::CreateScene();
 		break;
 	case level_5_scene:
-		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("Blue Six - Music And Wine.mp3");
+		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[scene_type].c_str());
 		next_scene = Level5Scene::CreateScene();
 		break;
 	case level_6_scene:
-		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("Blue Six - Music And Wine.mp3");
+		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[scene_type].c_str());
 		next_scene = Level6Scene::CreateScene();
 		break;
 	case begin_scene:
-		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[begin_scene].c_str());
+		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[scene_type].c_str());
 		next_scene = BeginScene::CreateScene();
 		break;
 	case end_scene:
-		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("Melissa Williamson - Room of Angel.mp3");
+		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[scene_type].c_str());
 		next_scene = EndScene::CreateScene();
 		break;
 	default:
