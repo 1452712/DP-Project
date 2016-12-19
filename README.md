@@ -25,6 +25,8 @@ Oct. 2016, in tjsse
 
 6. SceneManager - Single Instance
 
+7. Umbrella - Observer
+
 ### 说明
 
 - **原创代码在/Umbrella/Classes目录下**

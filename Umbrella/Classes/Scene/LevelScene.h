@@ -13,7 +13,7 @@
 
 USING_NS_CC;
 
-typedef class LevelScene : public Layer {
+class LevelScene : public Layer {
 public:
 	//≥ı ºªØ
 	static Scene* CreateScene();
@@ -75,6 +75,6 @@ protected:
 	Sprite *background_fog_2;
 	bool is_fat;
 	float fat_time;
-} LevelScene;
+};
 
 #endif

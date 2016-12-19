@@ -7,7 +7,6 @@
 #include "SceneFactory.h"
 #include "SceneManager.h"
 #include "LevelScene.h"
-#include "LevelXScene.h"
 
 USING_NS_CC;
 
