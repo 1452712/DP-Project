@@ -2,6 +2,7 @@
 #include "..\Entity\Umbrella.h"
 #include "SimpleAudioEngine.h"
 #include "SceneManager.h"
+#include "LevelSceneFactory.h"
 
 Scene* LevelScene::CreateScene(){
 	auto scene = Scene::create();
@@ -19,15 +20,16 @@ bool LevelScene::init() {
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
 	//加载地图
-	TMXTiledMap *map = TMXTiledMap::create("map.tmx");
-	this->addChild(map,4);
+	//TMXTiledMap *map = TMXTiledMap::create("map.tmx");
+	//this->addChild(map,4);
 
 	m_next_layer = nullptr;
 
 	//绑定Umbrella
-	AddUmbrella(map);
+	//AddUmbrella(map);
 	//具体初始化背景
-	InitializeBackground();
+	//InitializeBackground();
+
 
 	//菜单按钮
 	auto menu_botton = MenuItemImage::create(
@@ -42,7 +44,7 @@ bool LevelScene::init() {
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 21);
 
-	//显示时间\Purity
+	//显示时间
 	m_label_time_remaining_1 = Label::createWithTTF("Time Remaining : ","fonts/Avojaloin.ttf",18);
 	m_label_time_remaining_1->setTextColor(Color4B(255,255,255,255));
 	Size m_label_time_remaining_1_size = m_label_time_remaining_1->getContentSize();
@@ -61,6 +63,7 @@ bool LevelScene::init() {
 	m_label_time_remaining_2->setVisible(false);
 	this->addChild(m_label_time_remaining_2,22);
 
+	//显示Purity
 	m_label_purity_1 = Label::createWithTTF("Purity : ","fonts/Avojaloin.ttf",18);
 	m_label_purity_1->setTextColor(Color4B(255,255,255,255));
 	Size m_label_purity_1_size = m_label_purity_1->getContentSize();

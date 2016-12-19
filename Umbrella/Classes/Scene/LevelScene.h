@@ -24,14 +24,17 @@ public:
 
 	//更换场景--Dynamic
 	virtual void ChangeScene(float delta) = 0;
+	//virtual void ChangeScene(float delta,SCENE_INDEX) = 0;
 
 	//调整雨滴位置
 	void ResetRainDropPosition(Ref *ptr_sender);
 protected:
 	//绑定Umbrella--Dynamic
-	virtual void AddUmbrella(TMXTiledMap* map) = 0;
+	//virtual void AddUmbrella(TMXTiledMap* map) = 0;
+	virtual void AddUmbrella(TMXTiledMap* map,SCENE_INDEX) = 0;
 	//初始化背景--Dynamic
-	virtual void InitializeBackground() = 0;
+	//virtual void InitializeBackground() = 0;
+	virtual void InitializeBackground(SCENE_INDEX) = 0;
 
 	//开启菜单Callback
 	void MenuButtomCallBack(Ref *ptr_sender);
