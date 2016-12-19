@@ -27,6 +27,8 @@ Oct. 2016, in tjsse
 
 7. Umbrella - Observer
 
+8. MoveController - Strategy
+
 ### 说明
 
 - **原创代码在/Umbrella/Classes目录下**
