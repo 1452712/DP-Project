@@ -8,7 +8,7 @@ USING_NS_CC;
 //abstract base class
 class SceneFactory {
 public:
-    virtual Scene* createScene(enum SCENE_INDEX) = 0;
+    virtual LevelScene* createScene(LevelScene*, SCENE_INDEX, Vector<RainDrop*>*) = 0;
 };
 
 #endif

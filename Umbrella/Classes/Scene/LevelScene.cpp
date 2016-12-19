@@ -1,13 +1,41 @@
-#include "LevelScene.h"
-#include "..\Entity\Umbrella.h"
 #include "SimpleAudioEngine.h"
-#include "SceneManager.h"
-#include "LevelSceneFactory.h"
+
+#include "LevelScene.h"
+
+LevelSceneConfig config;
+SCENE_INDEX LevelScene::m_current_scene = begin_scene;
 
 Scene* LevelScene::CreateScene(){
 	auto scene = Scene::create();
 	auto layer = LevelScene::create();
 	scene->addChild(layer);
+
+	
+	switch(m_current_scene) {
+	case begin_scene:
+		m_current_scene = level_1_scene;
+		break;
+	case level_1_scene:
+		m_current_scene = level_2_scene;
+		break;
+	case level_2_scene:
+		m_current_scene = level_3_scene;
+		break;
+	case level_3_scene:
+		m_current_scene = level_4_scene;
+		break;
+	case level_4_scene:
+		m_current_scene = level_5_scene;
+		break;
+	case level_5_scene:
+		m_current_scene = level_6_scene;
+		break;
+	case level_6_scene:
+		m_current_scene = end_scene;
+		break;
+	default:
+		break;
+	}
 
 	return scene;
 }
@@ -19,11 +47,18 @@ bool LevelScene::init() {
 	Size visible_size = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
+	m_next_layer = nullptr;
+
+	LevelSceneFactory level_scene_factory;
+	level_scene_factory.createScene(this, m_current_scene, &rain);
+	if(m_current_scene == level_6_scene) {
+		DecoratorSceneFog decorator_fog;
+		decorator_fog.AddDecorator("Fog", this);
+	}
 	//加载地图
 	//TMXTiledMap *map = TMXTiledMap::create("map.tmx");
 	//this->addChild(map,4);
 
-	m_next_layer = nullptr;
 
 	//绑定Umbrella
 	//AddUmbrella(map);
@@ -189,4 +224,83 @@ void LevelScene::MenuButtomCallBack(cocos2d::Ref* ptr_sender) {
 void LevelScene::ResetRainDropPosition(cocos2d::Ref* ptr_sender) {
 	Size visible_size = Director::getInstance()->getVisibleSize();
 	static_cast<Sprite*>(ptr_sender)->setPosition(Point(CCRANDOM_0_1() * visible_size.width,visible_size.height * (1 + CCRANDOM_0_1() )));
+}
+
+void LevelScene::AddUmbrella(TMXTiledMap *map) {
+	Size visible_size = Director::getInstance()->getVisibleSize();
+
+	//具体Umbrella设置
+	//图片
+	Sprite* umbrella_sprite = Sprite::create(config.UMBRELLA_IMG[m_current_scene].c_str());     
+	m_umbrella = Umbrella::create();
+	//Purity
+	m_umbrella->SetPurity(config.UMBRELLA_PURITY[m_current_scene]);
+	//时间限制
+	m_umbrella->SetTimeLimit(config.TIME_LIMIT[m_current_scene]);
+	//绑定精灵
+	m_umbrella->BindSprite(umbrella_sprite);
+	m_umbrella->SetTiledMap(map);
+
+	//加载地图,将Umbrella绑定到object层
+    TMXObjectGroup* object_group = map->getObjectGroup("object");
+    ValueMap player_point = object_group->getObject("player_point");
+    float player_x = player_point.at("x").asFloat();
+    float player_y = player_point.at("y").asFloat();
+    m_umbrella->setPosition(Point(player_x , player_y) );
+
+    map->addChild(m_umbrella);
+
+	//绑定监听器
+	FloatController *float_controller = FloatController::create();
+
+	this->addChild(float_controller);
+	m_umbrella->SetController(float_controller);
+}
+
+void LevelScene::InitializeBackground() 
+{
+    Size visible_size = Director::getInstance()->getVisibleSize();
+
+	//具体背景设置
+    m_background_1 = Sprite::create(config.BACKGROUND_IMG_1[m_current_scene].c_str());
+    m_background_1->setPosition(Point(visible_size.width / 2, visible_size.height / 2));
+    this->addChild(m_background_1, 2);
+
+    m_background_2 = Sprite::create(config.BACKGROUND_IMG_2[m_current_scene].c_str());
+    m_background_2->setPosition(Point(visible_size.width + visible_size.width / 2, visible_size.height / 2));
+    this->addChild(m_background_2, 2);
+
+	//Level条
+	m_level_layer = Sprite::create(config.TITLE_IMG[m_current_scene].c_str());
+	m_level_layer->setPosition(Point(visible_size.width / 2, visible_size.height / 2));
+	this->addChild(m_level_layer,20);
+
+}
+
+void LevelScene::ChangeScene(float delta) {
+	SceneManager::GetInstance()->ChangeScene(config.NEXT_SCENE[m_current_scene]);
+}
+
+void LevelScene::SetNextLayer(Sprite* next_layer) {
+	m_next_layer = next_layer;
+}
+
+void LevelScene::FogUpdate(float delta) {
+	Size fog_size = background_fog_1->getContentSize();
+    int pos_x1 = background_fog_1->getPositionX();
+    int pos_x2 = background_fog_2->getPositionX();
+    static int speed = 2;
+
+    pos_x1 -= speed;
+    pos_x2 -= speed;
+
+    if (pos_x1 <= -fog_size.width / 2) {
+        pos_x1 = fog_size.width + fog_size.width / 2;
+    }
+    if (pos_x2 <= -fog_size.width / 2) {
+        pos_x2 = fog_size.width + fog_size.width / 2;
+    }
+
+    background_fog_1->setPositionX(pos_x1);
+    background_fog_2->setPositionX(pos_x2);
 }
