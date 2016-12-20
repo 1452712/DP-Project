@@ -3,6 +3,9 @@
 
 #include "cocos2d.h"
 
+#include "SimpleAudioEngine.h"
+#include "SceneManager.h"
+
 USING_NS_CC;
 
 

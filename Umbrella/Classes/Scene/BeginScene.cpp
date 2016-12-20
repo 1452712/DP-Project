@@ -1,6 +1,4 @@
 #include "BeginScene.h"
-#include "SimpleAudioEngine.h"
-#include "SceneManager.h"
 
 Scene* BeginScene::CreateScene() { 
 	auto scene = Scene::create();

@@ -15,11 +15,13 @@ bool EndScene::init() {
 	Size visible_size = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
+	// ±³¾°
 	auto sprite_bk = Sprite::create("EndSceneBG.png");
 	sprite_bk->setPosition(Vec2(origin.x + visible_size.width /2,
 		                        origin.y + visible_size.height/2));
 	this->addChild(sprite_bk,2);
 
+	// ×ÖÄ»
 	epilogue = Label::createWithTTF("Luxuria \n"
 		                                  "Gula \n"
 										  "Avaritia \n"

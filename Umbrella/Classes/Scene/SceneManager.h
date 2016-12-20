@@ -10,9 +10,6 @@
 #include "LevelSceneConfig.h"
 USING_NS_CC;
 
-enum SCENE_INDEX {menu_scene   ,level_1_scene,level_2_scene,level_3_scene,
-		          level_4_scene,level_5_scene,level_6_scene,begin_scene  ,
-				  end_scene    ,};
 //³¡¾°¿ØÖÆ
 class SceneManager : public Ref {
 public:
@@ -30,6 +27,7 @@ public:
 	void RevertScene(const SCENE_INDEX scene_type = menu_scene);
 private:
 	static SceneManager* m_scene_manager;
+	static LevelSceneConfig config;
 };
 
 #endif

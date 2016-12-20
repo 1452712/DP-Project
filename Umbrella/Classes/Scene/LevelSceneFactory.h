@@ -5,8 +5,7 @@
 #include "cocos2d.h"
 
 #include "SceneFactory.h"
-#include "SceneManager.h"
-#include "LevelScene.h"
+#include "LevelSceneConfig.h"
 #include "..\Entity\RainDrop.h"
 
 USING_NS_CC;

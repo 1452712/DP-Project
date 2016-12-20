@@ -3,10 +3,7 @@
 
 #include "cocos2d.h"
 
-#include "SceneManager.h"
-#include "LevelSceneFactory.h"
 #include "LevelSceneConfig.h"
-#include "DecoratorSceneFog.h"
 #include "..\Entity\Umbrella.h"
 #include "..\Entity\RainDrop.h"
 #include "..\Controller\FloatController.h"
@@ -52,7 +49,7 @@ private:
 
 	static enum SCENE_INDEX m_current_scene;
 
-	//static LevelSceneConfig config;
+	static LevelSceneConfig config;
 
 	Umbrella *m_umbrella;
 	Sprite *m_background_1;
@@ -69,9 +66,7 @@ private:
 	//¥Ê¥¢”ÍµŒ
 	Vector<RainDrop*> rain;
 
-	//¥Ê¥¢ŒÌ
-	Sprite *background_fog_1;
-	Sprite *background_fog_2;
+	//≈®ŒÌ/±°ŒÌ
 	bool is_fat;
 	float fat_time;
 };

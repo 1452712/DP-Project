@@ -12,9 +12,11 @@ public:
 	void AddDecorator(std::string decorator, LevelScene *scene);
 	//ÎíµÄÅÜ¶¯
 	void FogUpdate(float delta);
-private:	
+
+	//´æ´¢Îí
 	Sprite *background_fog_1;
 	Sprite *background_fog_2;
+private:
 	bool is_fat;
 	float fat_time;
 };

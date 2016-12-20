@@ -56,14 +56,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // create a scene. it's an autorelease object
 	CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("Telepopmusik - Breathe.mp3");
 
-	//Director::getInstance()->getTextureCache()->addImage("rain_drop_3.png");
-
  	//auto scene = HelloWorld::createScene();  
 
 	
 	auto scene = BeginScene::CreateScene();
-
-	//auto scene = Level6Scene::CreateScene();
+	//auto scene = LevelScene::CreateScene();
 	//auto scene = EndScene::CreateScene();
 	//auto scene = MenuScene::CreateScene();
 

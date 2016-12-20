@@ -1,15 +1,16 @@
-#include "SimpleAudioEngine.h"
-
 #include "LevelScene.h"
 
-//LevelSceneConfig LevelScene::config;
-LevelSceneConfig config;
+#include "SimpleAudioEngine.h"
+#include "DecoratorSceneFog.h"
+#include "LevelSceneFactory.h"
+#include "SceneManager.h"
+
+
+LevelSceneConfig LevelScene::config;
 SCENE_INDEX LevelScene::m_current_scene = begin_scene;
+DecoratorSceneFog decorator_fog;
 
 Scene* LevelScene::CreateScene(){
-	auto scene = Scene::create();
-	auto layer = LevelScene::create();
-	scene->addChild(layer);
 
 	switch(m_current_scene) {
 	case begin_scene:
@@ -37,6 +38,10 @@ Scene* LevelScene::CreateScene(){
 		break;
 	}
 
+	auto scene = Scene::create();
+	auto layer = LevelScene::create();
+	scene->addChild(layer);
+
 	return scene;
 }
 
@@ -52,19 +57,8 @@ bool LevelScene::init() {
 	LevelSceneFactory level_scene_factory;
 	level_scene_factory.createScene(this, m_current_scene, &rain);
 	if(m_current_scene == level_6_scene) {
-		DecoratorSceneFog decorator_fog;
 		decorator_fog.AddDecorator("Fog", this);
 	}
-	//加载地图
-	//TMXTiledMap *map = TMXTiledMap::create("map.tmx");
-	//this->addChild(map,4);
-
-
-	//绑定Umbrella
-	//AddUmbrella(map);
-	//具体初始化背景
-	//InitializeBackground();
-
 
 	//菜单按钮
 	auto menu_botton = MenuItemImage::create(
@@ -281,16 +275,14 @@ void LevelScene::ChangeScene(float delta) {
 	SceneManager::GetInstance()->ChangeScene(config.NEXT_SCENE[m_current_scene]);
 }
 
-void LevelScene::SetNextLayer(Sprite* next_layer) {
-	m_next_layer = next_layer;
-}
-
 void LevelScene::FogUpdate(float delta) {
-	Size fog_size = background_fog_1->getContentSize();
-    int pos_x1 = background_fog_1->getPositionX();
-    int pos_x2 = background_fog_2->getPositionX();
-    static int speed = 2;
+	// 获取current position
+	Size fog_size = decorator_fog.background_fog_1->getContentSize();
+    int pos_x1 = decorator_fog.background_fog_1->getPositionX();
+    int pos_x2 = decorator_fog.background_fog_2->getPositionX();
 
+	// 刷新fog position
+    static int speed = 2;
     pos_x1 -= speed;
     pos_x2 -= speed;
 
@@ -301,6 +293,10 @@ void LevelScene::FogUpdate(float delta) {
         pos_x2 = fog_size.width + fog_size.width / 2;
     }
 
-    background_fog_1->setPositionX(pos_x1);
-    background_fog_2->setPositionX(pos_x2);
+    decorator_fog.background_fog_1->setPositionX(pos_x1);
+    decorator_fog.background_fog_2->setPositionX(pos_x2);
+}
+
+void LevelScene::SetNextLayer(Sprite* next_layer) {
+	m_next_layer = next_layer;
 }

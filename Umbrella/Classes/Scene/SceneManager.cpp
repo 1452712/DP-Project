@@ -2,7 +2,7 @@
 
 
 SceneManager* SceneManager::m_scene_manager = nullptr;
-LevelSceneConfig config;
+LevelSceneConfig SceneManager::config;
 
 bool SceneManager::init() {
 	return true;
@@ -24,27 +24,8 @@ void SceneManager::ChangeScene(SCENE_INDEX scene_type){
 	Scene* next_scene = nullptr;
 	//Ô¤¼ÓÔØÒôÀÖ
 	switch(scene_type) {
-	case level_1_scene:
-		//CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[scene_type].c_str());
-		//next_scene = LevelXScene::CreateScene();
-		//break;
-	case level_2_scene:
-		//CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[scene_type].c_str());
-		//next_scene = Level2Scene::CreateScene();
-		//break;
-	case level_3_scene:
-		//CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[scene_type].c_str());
-		//next_scene = Level3Scene::CreateScene();
-		//break;
-	case level_4_scene:
-		//CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[scene_type].c_str());
-		//next_scene = Level4Scene::CreateScene();
-		//break;
-	case level_5_scene:
-		//CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[scene_type].c_str());
-		//next_scene = Level5Scene::CreateScene();
-		//break;
-	case level_6_scene:
+	case level_1_scene: case level_2_scene: case level_3_scene:
+	case level_4_scene: case level_5_scene: case level_6_scene:
 		CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(config.BACKGROUND_MUSIC[scene_type].c_str());
 		next_scene = LevelScene::CreateScene();
 		break;

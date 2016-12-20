@@ -2,11 +2,14 @@
 #define __LEVEL_SCENE_CONFIG_H__
 
 #include "cocos2d.h"
-#include "SceneManager.h"
 #include <map>
 #include <string>
 
 USING_NS_CC;
+
+enum SCENE_INDEX {menu_scene   ,level_1_scene,level_2_scene,level_3_scene,
+		          level_4_scene,level_5_scene,level_6_scene,begin_scene  ,
+				  end_scene    ,};
 
 class LevelSceneConfig {
 public:

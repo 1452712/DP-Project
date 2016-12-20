@@ -1,4 +1,5 @@
 #include "MenuScene.h"
+#include "LevelSceneConfig.h"
 #include "SceneManager.h"
 #include "SimpleAudioEngine.h"
 
@@ -16,11 +17,13 @@ bool MenuScene::init() {
 	Size visible_size = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
+	// ±³¾°
 	auto sprite_bk = Sprite::create("MenuSceneBG.png");
 	sprite_bk->setPosition(Vec2(origin.x + visible_size.width /2,
 		                        origin.y + visible_size.height/2));
 	this->addChild(sprite_bk,2);
 
+	// ·µ»Øbutton
 	auto back_botton = MenuItemImage::create("back_button_1.png",
                                              "back_button_2.png",
                                              CC_CALLBACK_1(MenuScene::MenuBottomCallBack, this));
@@ -31,6 +34,7 @@ bool MenuScene::init() {
     menu_1->setPosition(Vec2::ZERO);
     this->addChild(menu_1, 4);
 
+	// ÍË³öbutton
 	auto exit_bottom = MenuItemImage::create("CloseSelected.png",
                                              "CloseNormal.png",
                                              CC_CALLBACK_1(MenuScene::ExitBottomCallBack, this));
